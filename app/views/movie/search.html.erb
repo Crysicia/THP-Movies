@@ -1,37 +1,34 @@
-<section class="content-13 subscribe-form bg-turquoise">
-  <div class="container">
-    <div class="row">
-      <form>
-        <%= form_tag(search_path, method: :get) do %>
-        <div class="col-sm-8">
-          <%= text_field_tag :title %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= form_tag(search_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
+  <%= text_field_tag :title %>
+  <%= submit_tag "Search", name: nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+  <% end %>
+</nav>
+<div class="container">
+  <% if @movies %>
+  <% if @movies.empty? %>
+  <p>Pas de film trouvé</p>
+  <% end %>
+  <div class="row">
+    <% @movies.each do |movie| %>
+    <div class="col-xs-6 col-sm-4 col-lg-3">
+      <div class="card">
+        <img class="card-img-top" src="<%= movie['poster'] %>" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= movie['title'] %>
+          </h4>
+          <p class="card-text">Directed by :
+            <%= movie['director'] %>
+          </p>
+          <p class="card-text">Release :
+            <%= movie['release'] %>
+          </p>
         </div>
-        <div class="col-sm-4">
-          <%= submit_tag "Create", name: nil %>
-        </div>
-        <% end %>
-      </form>
-    </div>
-  </div>
-</section>
 
-<% if @movies %>
-<% if @movies.empty? %>
-<p>Pas de film trouvé</p>
-<% end %>
-<div class="row">
- <% @movies.each do |movie| %>
-<div class="col-sm-6 col-lg-4">
-   <div class="card">
-    <img class="card-img-top" src="<%= movie['poster'] %>" alt="Card image cap">
-    <div class="card-body">
-      <h4 class="card-title"><%= movie['title'] %></h4>
-      <p class="card-text">Directed by : <%= movie['director'] %></p>
-      <p class="card-text">Release : <%= movie['release'] %></p>
+      </div>
     </div>
-
+    <% end %>
   </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
-<% end %>

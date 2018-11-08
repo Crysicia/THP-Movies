@@ -22,7 +22,7 @@ class SearchMovie
       hash['title'] = movie['title']
       hash['release'] = movie['release_date']
       hash['director'] = director(movie['id'].to_i)
-      hash['poster'] = movie['poster_path'] != nil ? @baseurl + movie['poster_path'] : ''
+      hash['poster'] = movie['poster_path'] != nil ? @baseurl + movie['poster_path'] : 'https://via.placeholder.com/200x300'
       array << hash
     end
     array
