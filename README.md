@@ -1,24 +1,28 @@
-# README
+# THP-Movies !
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## :wrench: Installation guide
+To install and test our awesome project :
 
-Things you may want to cover:
+    $ git clone https://github.com/Crysicia/THP-Movies.git
+    $ cd THP-Movie
+    $ bundle install
+    $ rails db:create
+  Run it like this :
 
-* Ruby version
+    $ rails s
+    
+  Then you can go to :
 
-* System dependencies
+    $ localhost:3000
+  And run the tests :
+  
+    $ rails test:system
+    
+## :radio: What does it do ?
+Simple-yet-effective TMDb scrapper and display.
+## :clapper: But, what about the live website ?
 
-* Configuration
+He's here : [Click me :star2:](http://thpalpha-moviedb.herokuapp.com)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## :octopus: Who made this ?
+@ssimonlp the hard-worker and @Crysicia the cookies master !
